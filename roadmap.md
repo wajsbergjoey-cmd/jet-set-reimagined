@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Build responsive navigation and hero
-- [ ] Add services and advisor-value sections
-- [ ] Add destination gallery, reviews, FAQ, consultation, and footer
-- [ ] Add metadata, styling, and generated imagery
-- [ ] Validate desktop and mobile interactions
+- [x] Build responsive navigation and hero
+- [x] Add services and advisor-value sections
+- [x] Add destination gallery, reviews, FAQ, consultation, and footer
+- [x] Add metadata, styling, and generated imagery
+- [x] Validate desktop and mobile interactions
