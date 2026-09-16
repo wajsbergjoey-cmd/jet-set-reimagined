@@ -35,6 +35,12 @@ const destinations = [
   { name: "Turks & Caicos", detail: "Caribbean", image: turksImage },
 ];
 
+const services = [
+  { Icon: BedDouble, title: "Hotels & resorts", copy: "Room upgrades, resort credit, and early check-in at vetted luxury properties." },
+  { Icon: Sailboat, title: "Cruises", copy: "Cabin selection, onboard credits, and verified itinerary advice." },
+  { Icon: Plane, title: "Flights", copy: "Seamless routing, seat strategy, and instant support when plans shift." },
+];
+
 const reviews = [
   ["Ascha W.", "Joey made the entire travel planning process so easy and stress-free. He was incredibly responsive and made sure every detail was taken care of."],
   ["Jennifer S.", "Such a great experience from start to finish. Joey was professional, friendly, and helped us find exactly what we were looking for."],
@@ -82,11 +88,7 @@ function Index() {
 
       <section id="services" className="scroll-mt-20 bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-7xl md:grid-cols-3">
-          {[
-            [BedDouble, 'Hotels & resorts', 'Room upgrades, resort credit, and early check-in at vetted luxury properties.'],
-            [Sailboat, 'Cruises', 'Cabin selection, onboard credits, and verified itinerary advice.'],
-            [Plane, 'Flights', 'Seamless routing, seat strategy, and instant support when plans shift.'],
-          ].map(([Icon, title, copy]) => <article key={String(title)} className="border-b border-primary-foreground/10 px-8 py-12 text-center md:border-r md:border-b-0 last:border-r-0"><span className="mx-auto grid size-12 place-items-center rounded-full bg-accent text-accent-foreground"><Icon className="size-5" /></span><h2 className="mt-5 text-xl">{String(title)}</h2><p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-primary-foreground/65">{String(copy)}</p></article>)}
+          {services.map(({ Icon, title, copy }) => <article key={title} className="border-b border-primary-foreground/10 px-8 py-12 text-center md:border-r md:border-b-0 last:border-r-0"><span className="mx-auto grid size-12 place-items-center rounded-full bg-accent text-accent-foreground"><Icon className="size-5" /></span><h2 className="mt-5 text-xl">{title}</h2><p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-primary-foreground/65">{copy}</p></article>)}
         </div>
       </section>
 
