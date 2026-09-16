@@ -1,14 +1,24 @@
-# Welcome to your Lovable project
+# Jet Set Travel Co.
 
-This project was built with [Lovable](https://lovable.dev).
+A luxury travel advisor website — trips planned with taste, booked with an edge.
 
-## Build with Lovable
+The site showcases advisor services for hotels & resorts, cruises, and flights, with the perks, insider access, and direct support that only come from booking through an advisor (Fora Travel partner).
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## Sections
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Hero** — advisor positioning with proof points: Fora Advisor network, Exclusive Perks, 24/7 direct support
+- **Services** — hotels & resorts, cruises, and flights
+- **Why book through an advisor** — better rates, VIP status, and perks you can't unlock on your own
+- **Recent trips** — Maui, Amalfi Coast, Cancun, Turks & Caicos
+- **Client reviews** — testimonials from recent travelers
+- **FAQ** — pricing, how advisor booking works, trip coordination
+- **Consultation** — book a quick intro call
+
+## Tech
+
+- TanStack Start (React 19, TypeScript)
+- Tailwind CSS v4 with a custom luxury theme (cream, espresso, gold)
+- Fraunces (serif headings) + Work Sans (body)
 
 ## Development
 
@@ -23,7 +33,6 @@ npm run dev
 
 ## Built with
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+- [Lovable](https://lovable.dev)
+
+Contact: hello@jetsettravelco.com · Instagram [@jetsettravelco_](https://instagram.com/jetsettravelco_)
