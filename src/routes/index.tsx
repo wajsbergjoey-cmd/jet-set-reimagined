@@ -167,29 +167,39 @@ function Index() {
 
       <footer className="bg-primary px-5 py-14 text-primary-foreground lg:px-10"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-10 sm:flex-row"><div><div className="font-serif text-2xl uppercase tracking-[0.16em]">Jet Set<span className="block font-sans text-[9px] tracking-[0.34em] text-secondary">Travel Co.</span></div><p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/60">Hotels, cruises & flights, planned with an insider’s eye.</p></div><div className="flex flex-col gap-3 text-sm"><a href="mailto:jetsettravelco1@gmail.com" className="hover:text-secondary">jetsettravelco1@gmail.com</a><a href="https://www.instagram.com/jetsettravelco_/" target="_blank" rel="noreferrer" className="hover:text-secondary">Instagram @jetsettravelco_</a></div></div></div></footer>
       {consultOpen && (
-        <div className="fixed inset-0 z-50">
+        <div
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Book your consult"
+          onKeyDown={handlePanelKeyDown}
+          className="fixed inset-0 z-50 sm:bg-primary/50"
+        >
           <button
             aria-label="Close booking panel"
-            className="absolute inset-0 h-full w-full cursor-default bg-primary/50"
+            tabIndex={-1}
+            className="absolute inset-0 hidden h-full w-full cursor-default sm:block"
             onClick={() => setConsultOpen(false)}
           />
-          <aside className="absolute right-0 top-0 flex h-full w-full flex-col bg-background shadow-2xl sm:w-[520px]">
-            <div className="flex items-center justify-between border-b border-border px-6 py-4">
+          <div className="absolute inset-0 flex flex-col bg-background shadow-2xl sm:inset-y-0 sm:left-auto sm:right-0 sm:w-[520px]">
+            <div className="flex items-center justify-between gap-4 border-b border-border px-5 pb-4 pt-[max(1rem,env(safe-area-inset-top))] sm:px-6">
               <p className="font-serif text-lg">Book your consult</p>
               <button
-                aria-label="Close"
+                ref={closeButtonRef}
+                aria-label="Close booking panel"
                 onClick={() => setConsultOpen(false)}
-                className="rounded-full p-2 transition-colors hover:bg-muted"
+                className="inline-flex min-h-11 items-center gap-2 rounded-sm px-3 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
-                <X className="h-5 w-5" />
+                Close
+                <X className="size-5" aria-hidden="true" />
               </button>
             </div>
             <iframe
               src="https://calendly.com/jetsettravelco"
               title="Book a consultation with Jet Set Travel Co."
-              className="h-full w-full flex-1"
+              className="w-full flex-1 border-0 pb-[env(safe-area-inset-bottom)]"
             />
-          </aside>
+          </div>
         </div>
       )}
     </main>
