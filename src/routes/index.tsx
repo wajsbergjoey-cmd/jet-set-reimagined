@@ -50,6 +50,7 @@ const reviews = [
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [consultOpen, setConsultOpen] = useState(false);
   return (
     <main className="overflow-hidden bg-background text-foreground">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-primary/10 bg-background/95 backdrop-blur-md">
@@ -125,9 +126,35 @@ function Index() {
         <AccordionItem value="transport"><AccordionTrigger className="py-6 text-base no-underline hover:no-underline">Can you coordinate flights and cruises too?</AccordionTrigger><AccordionContent className="max-w-2xl pb-6 leading-6 text-muted-foreground">Yes. I can coordinate air, hotels, transfers, and cruises into one seamless trip, including cabin and seat guidance and support if plans shift.</AccordionContent></AccordionItem>
       </Accordion></div></section>
 
-      <section id="contact" className="scroll-mt-20 bg-secondary px-5 py-24 lg:px-10 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center"><div><p className="text-xs uppercase tracking-[0.2em]">Let’s plan something</p><h2 className="mt-4 max-w-2xl text-5xl leading-[1.05] sm:text-6xl">A quick call tells us if we’re a fit.</h2><p className="mt-6 max-w-xl text-base leading-7 text-foreground/70">No obligation, no cost. We’ll talk through where you want to go, what matters most on this trip, and what it would look like to have me handle the planning.</p></div><div className="border border-primary/20 bg-background p-7 sm:p-10"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Free trip consultation</p><h3 className="mt-4 text-3xl">Your next trip starts here.</h3><ol className="mt-7 space-y-4 text-sm text-muted-foreground"><li className="flex gap-3"><span className="font-semibold text-accent">01</span>We talk through your trip, budget, and dates.</li><li className="flex gap-3"><span className="font-semibold text-accent">02</span>I send a proposal with real, considered options.</li><li className="flex gap-3"><span className="font-semibold text-accent">03</span>You approve, and I take care of the booking.</li></ol><Button asChild size="lg" className="mt-8 h-13 w-full rounded-sm"><a href="https://calendly.com/jetsettravelco">Book your consult <ArrowRight /></a></Button><p className="mt-4 text-center text-[11px] text-muted-foreground">Private, personal, and no spam — ever.</p></div></div></section>
+      <section id="contact" className="scroll-mt-20 bg-secondary px-5 py-24 lg:px-10 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center"><div><p className="text-xs uppercase tracking-[0.2em]">Let’s plan something</p><h2 className="mt-4 max-w-2xl text-5xl leading-[1.05] sm:text-6xl">A quick call tells us if we’re a fit.</h2><p className="mt-6 max-w-xl text-base leading-7 text-foreground/70">No obligation, no cost. We’ll talk through where you want to go, what matters most on this trip, and what it would look like to have me handle the planning.</p></div><div className="border border-primary/20 bg-background p-7 sm:p-10"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Free trip consultation</p><h3 className="mt-4 text-3xl">Your next trip starts here.</h3><ol className="mt-7 space-y-4 text-sm text-muted-foreground"><li className="flex gap-3"><span className="font-semibold text-accent">01</span>We talk through your trip, budget, and dates.</li><li className="flex gap-3"><span className="font-semibold text-accent">02</span>I send a proposal with real, considered options.</li><li className="flex gap-3"><span className="font-semibold text-accent">03</span>You approve, and I take care of the booking.</li></ol><Button size="lg" className="mt-8 h-13 w-full rounded-sm" onClick={() => setConsultOpen(true)}>Book your consult <ArrowRight /></Button><p className="mt-4 text-center text-[11px] text-muted-foreground">Private, personal, and no spam — ever.</p></div></div></section>
 
-      <footer className="bg-primary px-5 py-14 text-primary-foreground lg:px-10"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-10 sm:flex-row"><div><div className="font-serif text-2xl uppercase tracking-[0.16em]">Jet Set<span className="block font-sans text-[9px] tracking-[0.34em] text-secondary">Travel Co.</span></div><p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/60">Hotels, cruises & flights, planned with an insider’s eye.</p></div><div className="flex flex-col gap-3 text-sm"><a href="mailto:jetsettravelco1@gmail.com" className="hover:text-secondary">jetsettravelco1@gmail.com</a><a href="https://www.instagram.com/jetsettravelco_/" target="_blank" rel="noreferrer" className="hover:text-secondary">Instagram @jetsettravelco_</a><a href="https://calendly.com/jetsettravelco" className="hover:text-secondary">calendly.com/jetsettravelco</a></div></div></div></footer>
+      <footer className="bg-primary px-5 py-14 text-primary-foreground lg:px-10"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-10 sm:flex-row"><div><div className="font-serif text-2xl uppercase tracking-[0.16em]">Jet Set<span className="block font-sans text-[9px] tracking-[0.34em] text-secondary">Travel Co.</span></div><p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/60">Hotels, cruises & flights, planned with an insider’s eye.</p></div><div className="flex flex-col gap-3 text-sm"><a href="mailto:jetsettravelco1@gmail.com" className="hover:text-secondary">jetsettravelco1@gmail.com</a><a href="https://www.instagram.com/jetsettravelco_/" target="_blank" rel="noreferrer" className="hover:text-secondary">Instagram @jetsettravelco_</a></div></div></div></footer>
+      {consultOpen && (
+        <div className="fixed inset-0 z-50">
+          <button
+            aria-label="Close booking panel"
+            className="absolute inset-0 h-full w-full cursor-default bg-primary/50"
+            onClick={() => setConsultOpen(false)}
+          />
+          <aside className="absolute right-0 top-0 flex h-full w-full flex-col bg-background shadow-2xl sm:w-[520px]">
+            <div className="flex items-center justify-between border-b border-border px-6 py-4">
+              <p className="font-serif text-lg">Book your consult</p>
+              <button
+                aria-label="Close"
+                onClick={() => setConsultOpen(false)}
+                className="rounded-full p-2 transition-colors hover:bg-muted"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <iframe
+              src="https://calendly.com/jetsettravelco"
+              title="Book a consultation with Jet Set Travel Co."
+              className="h-full w-full flex-1"
+            />
+          </aside>
+        </div>
+      )}
     </main>
   );
 }
