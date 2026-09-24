@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       { title: "Luxury Travel Advisor — Jet Set Travel Co." },
       { name: "description", content: "Luxury hotels, cruises, and flights with exclusive perks, better value, and direct advisor support." },
       { property: "og:title", content: "Luxury Travel Advisor — Jet Set Travel Co." },
-      { property: "og:description", content: "Travel planned with taste, preferred perks, and a direct line to your advisor." },
+      { property: "og:description", content: "Luxury hotels, cruises, and flights with exclusive perks, better value, and direct advisor support." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
