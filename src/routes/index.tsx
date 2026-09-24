@@ -112,11 +112,12 @@ function Index() {
           <div className="max-w-3xl">
             <p className="inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-primary-foreground/35 bg-primary/25 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] whitespace-nowrap"><span className="size-1.5 shrink-0 rounded-full bg-secondary" />Travel advisor — hotels, cruises & flights</p>
             <h1 className="mt-6 max-w-3xl text-5xl leading-[0.98] font-medium sm:text-6xl lg:text-7xl">Trips planned with taste, <em className="font-normal">booked with an edge.</em></h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-primary-foreground/85 sm:text-lg">Working with me costs you nothing — my consultation is always free, with no fees and no obligation. You get the upgrades, credits, and insider knowledge that only come from an advisor.</p>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-primary-foreground/85 sm:text-lg">You get the upgrades, credits, and insider knowledge that only come from an advisor.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-13 rounded-sm bg-background px-7 text-foreground shadow-none hover:bg-background/90"><a href="#contact">Get your free consultation</a></Button>
               <Button asChild size="lg" variant="outline" className="h-13 rounded-sm border-primary-foreground/55 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><a href="#trips">See what I book</a></Button>
             </div>
+            <p className="mt-5 text-sm text-primary-foreground/75">Always free to work with me — no fees, no obligation.</p>
           </div>
           <div className="mt-12 grid max-w-2xl grid-cols-3 border-t border-primary-foreground/25 pt-6">
             {[['Custom','Trips, your way'],['Exclusive','Perks'],['24/7','Direct advisor support']].map(([big, small]) => <div key={small}><div className="font-serif text-xl sm:text-2xl">{big}</div><div className="mt-1 pr-3 text-[9px] uppercase leading-4 tracking-[0.14em] text-primary-foreground/70 sm:text-[10px]">{small}</div></div>)}
