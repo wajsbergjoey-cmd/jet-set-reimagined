@@ -116,7 +116,7 @@ function Index() {
               <Button asChild size="lg" className="h-13 rounded-sm bg-background px-7 text-foreground shadow-none hover:bg-background/90"><a href="#contact">Get your free consultation</a></Button>
               <Button asChild size="lg" variant="outline" className="h-13 rounded-sm border-primary-foreground/55 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><a href="#trips">See what I book</a></Button>
             </div>
-            <p className="mt-6 inline-flex items-center gap-2 rounded-sm border border-accent/60 bg-accent/15 px-4 py-2.5 text-sm font-semibold tracking-wide text-secondary"><span className="size-1.5 shrink-0 rounded-full bg-secondary" />Totally free — from the first call to the day you book, you never pay me a thing.</p>
+            <p className="mt-6 inline-flex items-center gap-2 rounded-sm border border-accent/60 bg-accent/15 px-4 py-2.5 text-sm font-semibold tracking-wide text-secondary"><span className="size-1.5 shrink-0 rounded-full bg-secondary" />Totally free — from the first call until you're back home, you never pay me a thing.</p>
 
           </div>
           <div className="mt-12 grid max-w-2xl grid-cols-3 border-t border-primary-foreground/25 pt-6">
