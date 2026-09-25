@@ -35,7 +35,7 @@ const Email = ({ name, email, phone, picks = [], suggestion }: Props) => (
 
 export const template = {
   component: Email,
-  subject: (d: Record<string, any>) => `New mood board — ${d.name || 'Website visitor'}`,
+  subject: (d: Record<string, any>) => `New mood board — ${d['name'] || 'Website visitor'}`,
   displayName: 'Mood board request',
   to: 'jetsettravelco1@gmail.com',
   previewData: {
