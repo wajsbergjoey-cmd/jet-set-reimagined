@@ -101,7 +101,6 @@ function MoodBoard() {
     });
   };
 
-  const fullName = [firstName, lastName].map((s) => s.trim()).filter(Boolean).join(" ");
   const submit = async () => {
     setFormError("");
     if (!firstName.trim() || !lastName.trim()) return setFormError("Please add your first and last name.");
