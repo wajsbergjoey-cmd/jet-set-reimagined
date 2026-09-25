@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { ArrowRight, BedDouble, Menu, Plane, Sailboat, Send, X } from "lucide-react";
+import { ArrowRight, BedDouble, Check, Menu, Plane, Sailboat, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import heroImage from "@/assets/jetset-hero.jpg";
@@ -146,6 +146,50 @@ function Index() {
               ['04', 'Custom trips with insider access', 'Hard-to-get reservations, vetted local contacts, and itineraries built around how you actually travel instead of generic packages.'],
             ].map(([number, title, copy]) => <article key={number} className="border-t border-border py-8"><span className="text-xs font-semibold text-accent">{number}</span><h3 className="mt-5 text-xl">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{copy}</p></article>)}
           </div>
+        </div>
+      </section>
+
+      <section id="compare" className="scroll-mt-20 px-5 py-24 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-7xl">
+          <p className="font-serif text-sm font-semibold italic text-accent">Booking online vs. booking with me</p>
+          <h2 className="mt-3 max-w-2xl text-4xl leading-[1.08] sm:text-5xl">Same trip. Very different experience.</h2>
+          <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">Booking sites show you rooms. I show you what those sites never can — the perks, the handling, and a person in your corner from the first call until you're back home.</p>
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:gap-10">
+            <article className="border border-border p-7 sm:p-10">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Booking it yourself online</h3>
+              <ul className="mt-8 space-y-6">
+                {[
+                  'Hours lost comparing tabs, hoping the price is right',
+                  'Standard room, standard treatment, no extras',
+                  'A cancelled flight means hold music and chatbots',
+                  'You handle everything alone, mid-trip included',
+                ].map((item) => (
+                  <li key={item} className="flex gap-4 text-sm leading-6 text-muted-foreground">
+                    <X aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-muted-foreground/60" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article className="relative border-2 border-accent bg-accent/5 p-7 shadow-md sm:p-10">
+              <p className="absolute -top-3.5 left-7 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent-foreground sm:left-10"><span className="size-1.5 rounded-full bg-accent-foreground" />Same price to you</p>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Booking with Joey</h3>
+              <ul className="mt-8 space-y-6">
+                {[
+                  'Same or better rates — plus credits and deals that never appear online',
+                  'Upgrades, breakfast, and resort credit waiting at check-in',
+                  'Plans change? One message to me, and it’s handled',
+                  'A real person in your corner, from first call to back home — completely free',
+                ].map((item) => (
+                  <li key={item} className="flex gap-4 text-sm leading-6 font-medium">
+                    <Check aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+          <p className="mt-10 max-w-2xl text-center text-sm text-muted-foreground md:mx-auto md:text-left">And the best part: I’m paid by hotels and travel partners — never by you. So booking with me costs exactly what booking alone costs, minus the work.</p>
         </div>
       </section>
 
