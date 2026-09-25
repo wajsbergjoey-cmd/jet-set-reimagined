@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowRight, BedDouble, Menu, Plane, Sailboat, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -114,7 +114,7 @@ function Index() {
             <h1 className="mt-6 max-w-3xl text-5xl leading-[0.98] font-medium sm:text-6xl lg:text-7xl">Trips planned with taste, <em className="font-normal">booked with an edge.</em></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-13 rounded-sm bg-background px-7 text-foreground shadow-none hover:bg-background/90"><a href="#contact">Get your free consultation</a></Button>
-              <Button asChild size="lg" variant="outline" className="h-13 rounded-sm border-primary-foreground/55 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><a href="#trips">See what I book</a></Button>
+              <Button asChild size="lg" variant="outline" className="h-13 rounded-sm border-primary-foreground/55 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><Link to="/find-your-trip">Build your dream trip</Link></Button>
             </div>
             <p className="mt-6 inline-flex items-center gap-2 rounded-sm border border-accent/60 bg-accent/15 px-4 py-2.5 text-sm font-semibold tracking-wide text-secondary"><span className="size-1.5 shrink-0 rounded-full bg-secondary" />Totally free — from the first call until you're back home, you never pay me a thing.</p>
 
