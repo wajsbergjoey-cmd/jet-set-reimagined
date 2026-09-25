@@ -149,49 +149,6 @@ function Index() {
         </div>
       </section>
 
-      <section id="compare" className="scroll-mt-20 px-5 py-24 lg:px-10 lg:py-32">
-        <div className="mx-auto max-w-7xl">
-          <p className="font-serif text-sm font-semibold italic text-accent">Booking online vs. booking with me</p>
-          <h2 className="mt-3 max-w-2xl text-4xl leading-[1.08] sm:text-5xl">Same trip. Very different experience.</h2>
-          <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">Booking sites show you rooms. I show you what those sites never can — the perks, the handling, and a person in your corner from the first call until you're back home.</p>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:gap-10">
-            <article className="border border-border p-7 sm:p-10">
-              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Booking it yourself online</h3>
-              <ul className="mt-8 space-y-6">
-                {[
-                  'Hours lost comparing tabs, hoping the price is right',
-                  'Standard room, standard treatment, no extras',
-                  'A cancelled flight means hold music and chatbots',
-                  'You handle everything alone, mid-trip included',
-                ].map((item) => (
-                  <li key={item} className="flex gap-4 text-sm leading-6 text-muted-foreground">
-                    <X aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-muted-foreground/60" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </article>
-            <article className="relative border-2 border-accent bg-accent/5 p-7 shadow-md sm:p-10">
-              <p className="absolute -top-3.5 left-7 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent-foreground sm:left-10"><span className="size-1.5 rounded-full bg-accent-foreground" />Same price to you</p>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Booking with Joey</h3>
-              <ul className="mt-8 space-y-6">
-                {[
-                  'Same or better rates — plus credits and deals that never appear online',
-                  'Upgrades, breakfast, and resort credit waiting at check-in',
-                  'Plans change? One message to me, and it’s handled',
-                  'A real person in your corner, from first call to back home — completely free',
-                ].map((item) => (
-                  <li key={item} className="flex gap-4 text-sm leading-6 font-medium">
-                    <Check aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-accent" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          </div>
-          <p className="mt-10 max-w-2xl text-center text-sm text-muted-foreground md:mx-auto md:text-left">And the best part: I’m paid by hotels and travel partners — never by you. So booking with me costs exactly what booking alone costs, minus the work.</p>
-        </div>
-      </section>
 
       <section id="trips" className="scroll-mt-20 bg-primary px-5 py-24 text-primary-foreground lg:px-10 lg:py-28">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="text-xs uppercase tracking-[0.2em] text-secondary">Recent trips</p><h2 className="mt-3 text-4xl sm:text-5xl">A few places clients have landed.</h2></div><p className="max-w-sm text-sm leading-6 text-primary-foreground/60">Vetted stays, thoughtful routes, and the right details waiting at check-in.</p></div>
