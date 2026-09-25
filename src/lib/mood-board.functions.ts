@@ -17,6 +17,7 @@ export const sendMoodBoard = createServerFn({ method: "POST" })
     const name = `${data.firstName} ${data.lastName}`;
     await sendTemplateEmail("mood-board-request", "jetsettravelco1@gmail.com", {
       templateData: { name, email: data.email, phone: data.phone, picks: data.picks, suggestion: data.suggestion },
+      replyTo: data.email,
       idempotencyKey: `mood-board-${crypto.randomUUID()}`,
     });
     return { ok: true };
