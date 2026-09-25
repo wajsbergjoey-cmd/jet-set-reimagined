@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useServerFn } from "@tanstack/react-start";
+import { sendMoodBoard } from "@/lib/mood-board.functions";
 import mauiImage from "@/assets/maui.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 import cancunImage from "@/assets/cancun.jpg";
@@ -73,6 +75,9 @@ function MoodBoard() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [consultOpen, setConsultOpen] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [formError, setFormError] = useState("");
+  const send = useServerFn(sendMoodBoard);
   const done = stepIndex >= steps.length;
   const step = steps[stepIndex];
 
@@ -96,9 +101,20 @@ function MoodBoard() {
     });
   };
 
-  const fullName = [firstName, lastName].map((s) => s.trim()).filter(Boolean).join(" ");
-  const summary = steps.map((s) => `${s.title}: ${(picks[s.key] ?? []).map((o) => o.id).join(", ") || "—"}`).join("\n");
-  const mailto = `mailto:jetsettravelco1@gmail.com?subject=${encodeURIComponent(`My dream trip mood board${fullName ? ` — ${fullName}` : ""}`)}&body=${encodeURIComponent(`Hi Joey,\n\nHere's my dream trip mood board:\n\n${summary}\n\nYour take: ${suggestion(picks)}\n\n${fullName ? `— ${fullName}\n` : ""}${email ? `Email: ${email}\n` : ""}${phone ? `Phone: ${phone}` : ""}`)}`;
+  const submit = async () => {
+    setFormError("");
+    if (!firstName.trim() || !lastName.trim()) return setFormError("Please add your first and last name.");
+    if (!/^\S+@\S+\.\S+$/.test(email.trim())) return setFormError("Please add a valid email address.");
+    if (phone.replace(/\D/g, "").length < 7) return setFormError("Please add a valid phone number.");
+    setStatus("sending");
+    try {
+      await send({ data: { firstName, lastName, email, phone, suggestion: suggestion(picks),
+        picks: steps.map((s) => ({ title: s.title, value: (picks[s.key] ?? []).map((o) => o.id).join(", ") })) } });
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -170,9 +186,12 @@ function MoodBoard() {
                   </div>
                 </div>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Button asChild size="lg" className="rounded-sm"><a href={mailto}>1. Email my board to Joey</a></Button>
+                  <Button size="lg" className="rounded-sm" disabled={status === "sending" || status === "sent"} onClick={submit}>{status === "sending" ? "Sending…" : status === "sent" ? <><Check /> Sent to Joey</> : "1. Email my board to Joey"}</Button>
                   <Button size="lg" variant="outline" className="rounded-sm" onClick={() => setConsultOpen(true)}>2. Book my free consult <ArrowRight /></Button>
                 </div>
+                {formError && <p role="alert" className="mt-3 text-sm text-destructive">{formError}</p>}
+                {status === "sent" && <p role="status" className="mt-3 text-sm text-accent">Thank you, {firstName}! Joey has your board and will be in touch soon.</p>}
+                {status === "error" && <p role="alert" className="mt-3 text-sm text-destructive">Something went wrong sending your board. Please try again, or email jetsettravelco1@gmail.com.</p>}
                 <button type="button" onClick={() => { setPicks({}); setStepIndex(0); }} className="mt-5 text-xs text-muted-foreground underline underline-offset-4">Start over</button>
               </div>
             </>
