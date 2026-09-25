@@ -68,7 +68,10 @@ function suggestion(p: Record<string, Option[]>) {
 function MoodBoard() {
   const [stepIndex, setStepIndex] = useState(0);
   const [picks, setPicks] = useState<Record<string, Option[]>>({});
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [consultOpen, setConsultOpen] = useState(false);
   const done = stepIndex >= steps.length;
   const step = steps[stepIndex];
@@ -93,8 +96,9 @@ function MoodBoard() {
     });
   };
 
+  const fullName = [firstName, lastName].map((s) => s.trim()).filter(Boolean).join(" ");
   const summary = steps.map((s) => `${s.title}: ${(picks[s.key] ?? []).map((o) => o.id).join(", ") || "—"}`).join("\n");
-  const mailto = `mailto:jetsettravelco1@gmail.com?subject=${encodeURIComponent(`My dream trip mood board${name ? ` — ${name}` : ""}`)}&body=${encodeURIComponent(`Hi Joey,\n\nHere's my dream trip mood board:\n\n${summary}\n\nYour take: ${suggestion(picks)}\n\n${name ? `— ${name}` : ""}`)}`;
+  const mailto = `mailto:jetsettravelco1@gmail.com?subject=${encodeURIComponent(`My dream trip mood board${fullName ? ` — ${fullName}` : ""}`)}&body=${encodeURIComponent(`Hi Joey,\n\nHere's my dream trip mood board:\n\n${summary}\n\nYour take: ${suggestion(picks)}\n\n${fullName ? `— ${fullName}\n` : ""}${email ? `Email: ${email}\n` : ""}${phone ? `Phone: ${phone}` : ""}`)}`;
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -147,8 +151,24 @@ function MoodBoard() {
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Totally free, start to finish</p>
                 <h2 className="mt-3 text-2xl">Send your board to Joey</h2>
                 <p className="mt-2 text-sm text-muted-foreground">Joey sees your picks before you ever talk — so your call jumps straight to the good part.</p>
-                <label className="mt-5 block text-sm font-medium" htmlFor="mb-name">Your name</label>
-                <input id="mb-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="First & last name" className="mt-2 h-11 w-full rounded-sm border border-input bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring" />
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-sm font-medium" htmlFor="mb-first">First name</label>
+                    <input id="mb-first" value={firstName} onChange={(e) => setFirstName(e.target.value)} autoComplete="given-name" placeholder="Jane" className="mt-2 h-11 w-full rounded-sm border border-input bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium" htmlFor="mb-last">Last name</label>
+                    <input id="mb-last" value={lastName} onChange={(e) => setLastName(e.target.value)} autoComplete="family-name" placeholder="Doe" className="mt-2 h-11 w-full rounded-sm border border-input bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium" htmlFor="mb-email">Email address</label>
+                    <input id="mb-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" placeholder="jane@email.com" className="mt-2 h-11 w-full rounded-sm border border-input bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium" htmlFor="mb-phone">Phone number</label>
+                    <input id="mb-phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} autoComplete="tel" placeholder="(555) 123-4567" className="mt-2 h-11 w-full rounded-sm border border-input bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring" />
+                  </div>
+                </div>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Button asChild size="lg" className="rounded-sm"><a href={mailto}>1. Email my board to Joey</a></Button>
                   <Button size="lg" variant="outline" className="rounded-sm" onClick={() => setConsultOpen(true)}>2. Book my free consult <ArrowRight /></Button>
