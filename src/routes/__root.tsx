@@ -85,6 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Luxury hotels, cruises, and flights with exclusive perks, better value, and direct advisor support." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "google-site-verification", content: "Y2zfgOekdWCc1T8uhC4hE3ShLRQxW-OCIU4usoG0DYw" },
     ],
     links: [
       {
