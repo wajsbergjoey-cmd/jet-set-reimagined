@@ -12,9 +12,9 @@ import turksImage from "@/assets/turks-caicos.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fora Travel Advisor | Luxury Travel — Jet Set Travel Co." },
+      { title: "Affiliate of Fora Travel | Luxury Travel — Jet Set Travel Co." },
       { name: "description", content: "Luxury hotels, cruises, and flights with exclusive perks, better value, and direct advisor support." },
-      { property: "og:title", content: "Fora Travel Advisor | Luxury Travel — Jet Set Travel Co." },
+      { property: "og:title", content: "Affiliate of Fora Travel | Luxury Travel — Jet Set Travel Co." },
       { property: "og:description", content: "Luxury hotels, cruises, and flights with exclusive perks, better value, and direct advisor support." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -110,7 +110,7 @@ function Index() {
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:px-10 lg:pb-12">
           <div className="max-w-3xl">
-            <p className="inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-primary-foreground/35 bg-primary/25 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] whitespace-nowrap"><span className="size-1.5 shrink-0 rounded-full bg-secondary" /><span className="sm:hidden">Fora Travel Advisor</span><span className="hidden sm:inline">Fora Travel Advisor — hotels, cruises & flights</span></p>
+            <p className="inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-primary-foreground/35 bg-primary/25 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] whitespace-nowrap"><span className="size-1.5 shrink-0 rounded-full bg-secondary" /><span>Affiliate of Fora Travel</span></p>
             <h1 className="mt-6 max-w-3xl text-5xl leading-[0.98] font-medium sm:text-6xl lg:text-7xl">Trips planned with taste, <em className="font-normal">booked with an edge.</em></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-13 rounded-sm bg-background px-7 text-foreground shadow-none hover:bg-background/90"><a href="#contact">Get your free consultation</a></Button>
@@ -167,7 +167,7 @@ function Index() {
 
       <section id="contact" className="scroll-mt-20 bg-secondary px-5 py-24 lg:px-10 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center"><div><p className="text-xs uppercase tracking-[0.2em]">Let’s plan something</p><h2 className="mt-4 max-w-2xl text-5xl leading-[1.05] sm:text-6xl">A quick call tells us if we’re a fit.</h2><p className="mt-6 max-w-xl text-base leading-7 text-foreground/70">Everything is free — not just the first call. The planning and the booking are included too, so you never pay me anything from start to finish.</p></div><div className="border border-primary/20 bg-background p-7 sm:p-10"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Free, start to finish</p><h3 className="mt-4 text-3xl">Your next trip starts here.</h3><ol className="mt-7 space-y-4 text-sm text-muted-foreground"><li className="flex gap-3"><span className="font-semibold text-accent">01</span>We talk through your trip, budget, and dates.</li><li className="flex gap-3"><span className="font-semibold text-accent">02</span>I send a proposal with real, considered options.</li><li className="flex gap-3"><span className="font-semibold text-accent">03</span>You approve, and I take care of the booking — free of charge.</li></ol><Button size="lg" className="mt-8 h-13 w-full rounded-sm" onClick={() => setConsultOpen(true)}>Book your consult <ArrowRight /></Button><p className="mt-4 text-center text-[11px] text-muted-foreground">Private, personal, and no spam — ever.</p></div></div></section>
 
-      <footer className="bg-primary px-5 py-14 text-primary-foreground lg:px-10"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-10 sm:flex-row"><div><div className="font-serif text-2xl uppercase tracking-[0.16em]">Jet Set<span className="block font-sans text-[9px] tracking-[0.34em] text-secondary">Travel Co.</span></div><p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/60">Hotels, cruises & flights, planned with an insider’s eye.</p><p className="mt-3 text-xs text-primary-foreground/55">Independent Travel Advisor of Fora Travel</p></div><div className="flex flex-col gap-3 text-sm"><a href="mailto:jetsettravelco1@gmail.com" className="hover:text-secondary">jetsettravelco1@gmail.com</a><a href="https://www.instagram.com/jetsettravelco_/" target="_blank" rel="noreferrer" className="hover:text-secondary">Instagram @jetsettravelco_</a></div></div></div></footer>
+      <footer className="bg-primary px-5 py-14 text-primary-foreground lg:px-10"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-10 sm:flex-row"><div><div className="font-serif text-2xl uppercase tracking-[0.16em]">Jet Set<span className="block font-sans text-[9px] tracking-[0.34em] text-secondary">Travel Co.</span></div><p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/60">Hotels, cruises & flights, planned with an insider’s eye.</p><p className="mt-3 text-xs text-primary-foreground/55">Independent travel advisor of Fora Travel</p></div><div className="flex flex-col gap-3 text-sm"><a href="mailto:jetsettravelco1@gmail.com" className="hover:text-secondary">jetsettravelco1@gmail.com</a><a href="https://www.instagram.com/jetsettravelco_/" target="_blank" rel="noreferrer" className="hover:text-secondary">Instagram @jetsettravelco_</a></div></div></div></footer>
       {consultOpen && (
         <div
           ref={panelRef}
