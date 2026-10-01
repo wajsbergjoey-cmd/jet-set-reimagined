@@ -110,7 +110,7 @@ function Index() {
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:px-10 lg:pb-12">
           <div className="max-w-3xl">
-            <p className="inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-primary-foreground/35 bg-primary/25 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] whitespace-nowrap"><span className="size-1.5 shrink-0 rounded-full bg-secondary" />Fora Travel Advisor — hotels, cruises & flights</p>
+            <p className="inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-primary-foreground/35 bg-primary/25 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] whitespace-nowrap"><span className="size-1.5 shrink-0 rounded-full bg-secondary" /><span className="sm:hidden">Fora Travel Advisor</span><span className="hidden sm:inline">Fora Travel Advisor — hotels, cruises & flights</span></p>
             <h1 className="mt-6 max-w-3xl text-5xl leading-[0.98] font-medium sm:text-6xl lg:text-7xl">Trips planned with taste, <em className="font-normal">booked with an edge.</em></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-13 rounded-sm bg-background px-7 text-foreground shadow-none hover:bg-background/90"><a href="#contact">Get your free consultation</a></Button>
