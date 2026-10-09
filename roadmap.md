@@ -9,4 +9,5 @@
 - [x] Restore Fora Travel affiliation and advisor email in the footer
 - [x] Add Fora Travel affiliation to the launch video's closing screen
 - [x] Suggest standout additions to the website
-- [ ] Pick the next standout addition; answer whether an offers/deals board means constant upkeep
+- [x] Pick the next standout addition; answer whether an offers/deals board means constant upkeep
+- [ ] Departure-board hero built as an example — keep or drop, then publish
