@@ -10,4 +10,5 @@
 - [x] Add Fora Travel affiliation to the launch video's closing screen
 - [x] Suggest standout additions to the website
 - [x] Pick the next standout addition; answer whether an offers/deals board means constant upkeep
-- [ ] Departure-board hero built as an example — keep or drop, then publish
+- [x] Departure-board hero built as an example — user loves it, keep it
+- [ ] Publish so the board, mood board, and direct email form reach jet-settravelco.com
