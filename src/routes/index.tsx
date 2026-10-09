@@ -8,6 +8,7 @@ import mauiImage from "@/assets/maui.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 import cancunImage from "@/assets/cancun.jpg";
 import turksImage from "@/assets/turks-caicos.jpg";
+import { DepartureBoard } from "@/components/departure-board";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -108,8 +109,8 @@ function Index() {
       <section id="top" className="relative min-h-[760px] pt-[76px] text-primary-foreground lg:min-h-[800px]">
         <img src={heroImage} alt="Cliffside infinity pool overlooking a Greek island at sunset" width={1600} height={1200} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-primary/55" />
-        <div className="relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:px-10 lg:pb-12">
-          <div className="max-w-3xl">
+        <div className="relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:flex-row lg:items-end lg:justify-between lg:gap-14 lg:px-10 lg:pb-12">
+          <div className="w-full max-w-3xl">
             <p className="inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-primary-foreground/35 bg-primary/25 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] whitespace-nowrap"><span className="size-1.5 shrink-0 rounded-full bg-secondary" /><span className="hidden sm:inline">Travel advisor — hotels, cruises &amp; flights</span><span className="sm:hidden">Travel advisor</span></p>
             <h1 className="mt-6 max-w-3xl text-5xl leading-[0.98] font-medium sm:text-6xl lg:text-7xl">Trips planned with taste, <em className="font-normal">booked with an edge.</em></h1>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -118,10 +119,11 @@ function Index() {
             </div>
             <p className="mt-6 inline-flex items-center gap-2 rounded-sm border border-accent/60 bg-accent/15 px-4 py-2.5 text-sm font-semibold tracking-wide text-secondary"><span className="size-1.5 shrink-0 rounded-full bg-secondary" />Totally free — from the first call until you're back home, you never pay me a thing.</p>
 
+            <div className="mt-12 grid max-w-2xl grid-cols-3 border-t border-primary-foreground/25 pt-6">
+              {[['Custom','Trips, your way'],['Exclusive','Perks'],['24/7','Direct advisor support']].map(([big, small]) => <div key={small}><div className="font-serif text-xl sm:text-2xl">{big}</div><div className="mt-1 pr-3 text-[9px] uppercase leading-4 tracking-[0.14em] text-primary-foreground/70 sm:text-[10px]">{small}</div></div>)}
+            </div>
           </div>
-          <div className="mt-12 grid max-w-2xl grid-cols-3 border-t border-primary-foreground/25 pt-6">
-            {[['Custom','Trips, your way'],['Exclusive','Perks'],['24/7','Direct advisor support']].map(([big, small]) => <div key={small}><div className="font-serif text-xl sm:text-2xl">{big}</div><div className="mt-1 pr-3 text-[9px] uppercase leading-4 tracking-[0.14em] text-primary-foreground/70 sm:text-[10px]">{small}</div></div>)}
-          </div>
+          <DepartureBoard className="mt-10 w-full max-w-md shrink-0 lg:mb-1 lg:mt-0 lg:w-[390px] lg:max-w-none" />
         </div>
       </section>
 
