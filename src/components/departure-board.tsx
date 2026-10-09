@@ -65,7 +65,7 @@ export function DepartureBoard({ className = "" }: { className?: string }) {
 
       <ul className="board-list">
         {FLIGHTS.map((flight, row) => {
-          const status = flight.statuses[(tick + row) % flight.statuses.length];
+          const status = flight.statuses[(tick + row) % flight.statuses.length] ?? flight.statuses[0] ?? "";
           return (
             <li className="board-row" key={flight.dest}>
               <span className="board-dest-wrap">
