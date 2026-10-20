@@ -224,6 +224,19 @@
 .board-gate { font-size: 11px; color: color-mix(in oklab, var(--color-board-foreground) 72%, transparent); }
 .board-status { font-size: 12px; color: var(--color-accent); }
 
+@media (max-width: 430px) {
+  .board-cols,
+  .board-row { grid-template-columns: minmax(0, 1fr) 3em 7.8em; gap: 10px; }
+  .board-dest-wrap { flex-direction: column; align-items: flex-start; gap: 3px; }
+}
+
+@media (max-width: 360px) {
+  .board-cols,
+  .board-row { grid-template-columns: minmax(0, 1fr) 2.6em 7.4em; gap: 8px; }
+  .board-dest { font-size: 13px; }
+  .flap-line { gap: 1px; }
+}
+
 .board-foot {
   margin: 12px 0 0; padding-top: 10px;
   border-top: 1px solid color-mix(in oklab, var(--color-accent) 26%, transparent);
