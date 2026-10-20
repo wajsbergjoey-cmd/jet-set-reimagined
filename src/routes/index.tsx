@@ -161,7 +161,7 @@ function Index() {
               <h3 className="mt-3 max-w-md text-3xl leading-[1.08] sm:text-4xl">Planning a Maui trip? I know the island.</h3>
             </div>
             <div>
-              <p className="max-w-2xl text-sm leading-7 text-primary-foreground/70">I stayed at the Sheraton in Maui myself — relaxing, with service that truly stood out. It's exactly the kind of stay I recommend for honeymooners and getaways. Tell me what your trip should feel like, and I'll match you to the right beach, hotel, and room — with perks like upgrades and resort credit where they're available. Planning and booking are totally free, start to finish.</p>
+              <p className="max-w-2xl text-sm leading-7 text-primary-foreground/70">I stayed at the Sheraton in Maui myself. It was relaxing, with service that truly stood out. It's exactly the kind of stay I recommend for honeymooners and getaways. Tell me what your trip should feel like, and I'll match you to the right beach, hotel, and room, with perks like upgrades and resort credit where they're available. Planning and booking are totally free, start to finish.</p>
               <Button variant="outline" size="lg" className="mt-6 h-13 rounded-sm border-primary-foreground/55 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={() => setConsultOpen(true)}>Plan my Maui trip <ArrowRight /></Button>
             </div>
           </div>
