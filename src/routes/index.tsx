@@ -155,6 +155,16 @@ function Index() {
       <section id="trips" className="scroll-mt-20 bg-primary px-5 py-24 text-primary-foreground lg:px-10 lg:py-28">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="text-xs uppercase tracking-[0.2em] text-secondary">Recent trips</p><h2 className="mt-3 text-4xl sm:text-5xl">A few places clients have landed.</h2></div><p className="max-w-sm text-sm leading-6 text-primary-foreground/60">Vetted stays, thoughtful routes, and the right details waiting at check-in.</p></div>
           <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">{destinations.map((destination, index) => <figure key={destination.name} className={`group relative overflow-hidden ${index % 2 ? 'lg:mt-12' : ''}`}><img src={destination.image} alt={`${destination.name} luxury travel destination`} loading="lazy" width={1200} height={912} className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105" /><div className="absolute inset-0 bg-primary/25" /><figcaption className="absolute inset-x-0 bottom-0 p-6"><div className="font-serif text-2xl">{destination.name}</div><div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-primary-foreground/75">{destination.detail}</div></figcaption></figure>)}</div>
+          <div className="mt-4 grid gap-8 border-t border-primary-foreground/15 pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-secondary">Maui, first-hand</p>
+              <h3 className="mt-3 max-w-md text-3xl leading-[1.08] sm:text-4xl">Planning a Maui trip? I know the island.</h3>
+            </div>
+            <div>
+              <p className="max-w-2xl text-sm leading-7 text-primary-foreground/70">I stayed at the Sheraton in Maui myself — relaxing, with service that truly stood out. It's exactly the kind of stay I recommend for honeymooners and getaways. Tell me what your trip should feel like, and I'll match you to the right beach, hotel, and room — with perks like upgrades and resort credit where they're available. Planning and booking are totally free, start to finish.</p>
+              <Button variant="outline" size="lg" className="mt-6 h-13 rounded-sm border-primary-foreground/55 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={() => setConsultOpen(true)}>Plan my Maui trip <ArrowRight /></Button>
+            </div>
+          </div>
         </div>
       </section>
 

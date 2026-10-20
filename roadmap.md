@@ -11,4 +11,5 @@
 - [x] Suggest standout additions to the website
 - [x] Pick the next standout addition; answer whether an offers/deals board means constant upkeep
 - [x] Departure-board hero built as an example — user loves it, keep it
-- [ ] Publish so the board, mood board, and direct email form reach jet-settravelco.com
+- [x] Improve the homepage Maui section with Joey's first-hand Sheraton stay (search improvement)
+- [ ] Publish so the board, mood board, direct email form, and improved Maui section reach jet-settravelco.com
