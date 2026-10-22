@@ -13,7 +13,7 @@ describe("vacation simulator", () => {
     const days = buildItinerary({ ...SAMPLE, priorities: ["beach", "exploring"], rainyDay: true });
     expect(days[2]!.rainy).toBe(true);
     expect(days[2]!.activities.every((a) => a.kind === "indoor")).toBe(true);
-    expect(countKinds(buildItinerary({ ...SAMPLE, rainyDay: false })).indoor).toBeUndefined();
+    expect(countKinds(buildItinerary({ ...SAMPLE, rainyDay: false }))["indoor"]).toBeUndefined();
   });
   it("delayed arrival moves welcome dinner to day 2", () => {
     const days = buildItinerary({ ...SAMPLE, delayedArrival: true });
