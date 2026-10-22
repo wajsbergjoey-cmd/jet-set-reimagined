@@ -34,7 +34,7 @@ const money = (n: number) => `$${n.toLocaleString("en-US")}`;
 
 function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
-    <Button type="button" size="sm" variant={active ? "default" : "outline"} aria-pressed={active} onClick={onClick} className="rounded-full bg-transparent data-[on=true]:bg-primary" data-on={active}>
+    <Button type="button" size="sm" variant={active ? "default" : "outline"} aria-pressed={active} onClick={onClick} className={active ? "rounded-full" : "rounded-full bg-transparent"}>
       {children}
     </Button>
   );

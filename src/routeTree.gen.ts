@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FindYourTripRouteImport } from './routes/find-your-trip'
+import { Route as VacationSimulatorRouteImport } from './routes/vacation-simulator'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const FindYourTripRoute = FindYourTripRouteImport.update({
   path: '/find-your-trip',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VacationSimulatorRoute = VacationSimulatorRouteImport.update({
+  id: '/vacation-simulator',
+  path: '/vacation-simulator',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailTransactionalPreviewRoute =
   LovableEmailTransactionalPreviewRouteImport.update({
     id: '/lovable/email/transactional/preview',
@@ -33,34 +39,47 @@ const LovableEmailTransactionalPreviewRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/find-your-trip': typeof FindYourTripRoute
+  '/vacation-simulator': typeof VacationSimulatorRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/find-your-trip': typeof FindYourTripRoute
+  '/vacation-simulator': typeof VacationSimulatorRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/find-your-trip': typeof FindYourTripRoute
+  '/vacation-simulator': typeof VacationSimulatorRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/find-your-trip' | '/lovable/email/transactional/preview'
+  fullPaths:
+    | '/'
+    | '/find-your-trip'
+    | '/vacation-simulator'
+    | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/find-your-trip' | '/lovable/email/transactional/preview'
+  to:
+    | '/'
+    | '/find-your-trip'
+    | '/vacation-simulator'
+    | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
     | '/find-your-trip'
+    | '/vacation-simulator'
     | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FindYourTripRoute: typeof FindYourTripRoute
+  VacationSimulatorRoute: typeof VacationSimulatorRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
 
@@ -80,6 +99,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FindYourTripRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/vacation-simulator': {
+      id: '/vacation-simulator'
+      path: '/vacation-simulator'
+      fullPath: '/vacation-simulator'
+      preLoaderRoute: typeof VacationSimulatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/transactional/preview': {
       id: '/lovable/email/transactional/preview'
       path: '/lovable/email/transactional/preview'
@@ -93,6 +119,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FindYourTripRoute: FindYourTripRoute,
+  VacationSimulatorRoute: VacationSimulatorRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
 export const routeTree = rootRouteImport
