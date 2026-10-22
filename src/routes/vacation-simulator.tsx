@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArrowLeft, CloudRain, Clock, RotateCcw, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AnywhereExplorer } from "@/components/anywhere-explorer";
 import mauiImage from "@/assets/maui.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 import cancunImage from "@/assets/cancun.jpg";
@@ -168,6 +169,8 @@ function Simulator() {
           </div>
         </section>
       </div>
+
+      <AnywhereExplorer onAskJoey={() => setConsultOpen(true)} />
 
       <footer className="bg-primary px-5 py-10 text-center text-sm text-primary-foreground/70">
         <a href="mailto:jetsettravelco1@gmail.com" className="hover:text-secondary">jetsettravelco1@gmail.com</a>
