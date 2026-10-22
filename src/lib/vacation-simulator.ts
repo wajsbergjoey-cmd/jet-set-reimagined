@@ -100,7 +100,7 @@ export function buildItinerary(s: Scenario): Day[] {
     used[k] = i + 1;
     return list[i % list.length]!;
   };
-  const rainyIndex = s.rainyDay && s.nights >= 2 ? 2 : -1;
+  const rainyIndex = !s.rainyDay || s.nights < 2 ? -1 : s.nights >= 3 ? 3 : 2;
   const days: Day[] = [];
   let cursor = 0;
 
