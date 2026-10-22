@@ -143,7 +143,7 @@ function Simulator() {
           </div>
           <ol className="mt-6 space-y-4">
             {days.map((d) => (
-              <li key={d.day} className={`grid gap-4 border p-5 sm:grid-cols-[110px_1fr] ${d.rainy ? "border-accent bg-secondary/60" : "border-primary/15 bg-card"}`}>
+              <li key={d.day} className={`grid gap-4 border p-5 sm:grid-cols-[110px_1fr] ${d.rainy ? "border-2 border-accent bg-card" : "border-primary/15 bg-card"}`}>
                 <div><p className="font-serif text-2xl">{d.label}</p>{d.rainy && <p className="mt-1 inline-flex items-center gap-1 text-xs text-accent"><CloudRain className="size-3" /> If it rains</p>}</div>
                 <ul className="space-y-2">
                   {d.activities.map((a, i) => (
@@ -159,7 +159,7 @@ function Simulator() {
 
           <Compare original={original} current={days} changed={changed} />
 
-          <div className="mt-10 border border-primary/20 bg-secondary p-6 sm:p-8">
+          <div className="mt-10 border border-primary/20 bg-card p-6 sm:p-8">
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-accent"><Sparkles className="size-4" /> Like where this is going?</p>
             <h3 className="mt-3 text-3xl">Turn the preview into a real trip.</h3>
             <p className="mt-3 max-w-xl text-sm leading-6 text-foreground/70">Book a free call and walk Joey through what you built here. He'll check real hotels, prices and perks for your dates. Planning and booking are totally free, start to finish.</p>
