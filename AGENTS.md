@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Vacation Simulator scenario logic lives in pure functions in src/lib/vacation-simulator.ts with vitest tests beside it; the route only renders. Why: keeps the what-if rules testable and deterministic.

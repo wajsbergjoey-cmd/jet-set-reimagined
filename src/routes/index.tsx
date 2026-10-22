@@ -98,12 +98,12 @@ function Index() {
             <span className="font-serif text-[18px] font-semibold leading-[0.9] uppercase tracking-[0.18em]">Jet Set<span className="mt-1 block font-sans text-[8px] font-medium tracking-[0.35em] text-accent">Travel Co.</span></span>
           </a>
           <nav aria-label="Primary navigation" className="hidden items-center gap-8 lg:flex">
-            {navItems.map(([label, href]) => <a key={href} href={href} className="text-sm text-foreground/75 transition-colors hover:text-foreground">{label}</a>)}
+            {navItems.map(([label, href]) => <a key={href} href={href} className="text-sm text-foreground/75 transition-colors hover:text-foreground">{label}</a>)}<Link to="/vacation-simulator" className="text-sm text-accent hover:text-foreground">Simulator</Link>
           </nav>
           <Button asChild className="hidden h-11 rounded-sm px-6 lg:inline-flex"><a href="#contact">Book a consult</a></Button>
           <Button variant="outline" size="icon" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)} className="size-11 bg-transparent lg:hidden">{menuOpen ? <X /> : <Menu />}</Button>
         </div>
-        {menuOpen && <nav aria-label="Mobile navigation" className="border-t border-primary/10 bg-background px-5 py-5 lg:hidden">{navItems.map(([label, href]) => <a key={href} href={href} onClick={() => setMenuOpen(false)} className="block border-b border-primary/10 py-3 text-sm">{label}</a>)}<Button asChild className="mt-5 h-11 w-full rounded-sm"><a href="#contact" onClick={() => setMenuOpen(false)}>Book a consult</a></Button></nav>}
+        {menuOpen && <nav aria-label="Mobile navigation" className="border-t border-primary/10 bg-background px-5 py-5 lg:hidden">{navItems.map(([label, href]) => <a key={href} href={href} onClick={() => setMenuOpen(false)} className="block border-b border-primary/10 py-3 text-sm">{label}</a>)}<Link to="/vacation-simulator" className="block border-b border-primary/10 py-3 text-sm text-accent">Vacation Simulator</Link><Button asChild className="mt-5 h-11 w-full rounded-sm"><a href="#contact" onClick={() => setMenuOpen(false)}>Book a consult</a></Button></nav>}
       </header>
 
       <section id="top" className="relative min-h-[760px] pt-[76px] text-primary-foreground lg:min-h-[800px]">
