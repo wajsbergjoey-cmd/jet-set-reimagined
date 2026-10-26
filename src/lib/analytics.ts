@@ -32,8 +32,11 @@ export function initAnalytics() {
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(...args: unknown[]) {
-    window.dataLayer!.push(args);
+  // gtag.js only processes the real Arguments object; pushing a plain array
+  // (e.g. from rest params) is silently ignored and no hits are sent.
+  function gtag(..._args: unknown[]) {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer!.push(arguments);
   }
   window.gtag = gtag;
 
