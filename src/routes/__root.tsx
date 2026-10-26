@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { initAnalytics, trackPageView } from "../lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -123,6 +124,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  // Google Analytics: init once, then send a page view on every client-side
+  // route change (gtag's config call already tracks the initial load).
+  useEffect(() => {
+    initAnalytics();
+    return router.subscribe("onResolved", () => {
+      trackPageView(router.state.location.pathname);
+    });
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
