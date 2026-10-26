@@ -12,6 +12,6 @@
 - [x] Pick the next standout addition; answer whether an offers/deals board means constant upkeep
 - [x] Departure-board hero built as an example — user loves it, keep it
 - [x] Improve the homepage Maui section with Joey's first-hand Sheraton stay (search improvement)
-- [ ] Publish so the board, mood board, direct email form, and improved Maui section reach jet-settravelco.com
+- [x] Publish so the board, mood board, direct email form, improved Maui section, and Google Analytics tag reach jet-settravelco.com (published 2026-10-26; live bundle verified to carry the measurement ID)
 - [x] Vacation Simulator sample (draft only, in-memory, no accounts)
-- [ ] Simulator accounts and saved trips (waits on Joey approving the sample and switching on Cloud)
+- [ ] Simulator accounts and saved trips (paused by Joey 2026-10-22; Cloud is already on, so this waits on him restarting the simulator)
