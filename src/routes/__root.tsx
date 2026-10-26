@@ -79,10 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Luxury Travel Advisor — Jet Set Travel Co." },
+      { title: "Luxury Travel Advisor | Jet Set Travel Co." },
       { name: "description", content: "Luxury hotels, cruises, and flights with exclusive perks, better value, and direct advisor support." },
       { name: "author", content: "Jet Set Travel Co." },
-      { property: "og:title", content: "Luxury Travel Advisor — Jet Set Travel Co." },
+      { property: "og:title", content: "Luxury Travel Advisor | Jet Set Travel Co." },
       { property: "og:description", content: "Luxury hotels, cruises, and flights with exclusive perks, better value, and direct advisor support." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
