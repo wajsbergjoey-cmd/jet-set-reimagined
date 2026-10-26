@@ -9,6 +9,8 @@ import mauiImage from "@/assets/maui.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 import cancunImage from "@/assets/cancun.jpg";
 import turksImage from "@/assets/turks-caicos.jpg";
+import moodFormalImage from "@/assets/mood-formal.jpg";
+import jetsetHeroImage from "@/assets/jetset-hero.jpg";
 import { DepartureBoard } from "@/components/departure-board";
 import { TripCheckForm } from "@/components/trip-check-form";
 
@@ -27,8 +29,14 @@ export const Route = createFileRoute("/")({
 });
 
 const navItems = [
-  ["Services", "#services"], ["Perks", "#perks"], ["Recent trips", "#trips"],
+  ["Services", "#services"], ["Perks", "#perks"], ["Occasions", "#occasions"], ["Recent trips", "#trips"],
   ["Trip check", "#trip-check"], ["Reviews", "#reviews"], ["Contact", "#contact"],
+] as const;
+
+const occasions = [
+  { to: "/couples-getaways", name: "Couples & getaways", detail: "Anniversaries, proposals & honeymoons", image: amalfiImage },
+  { to: "/milestone-trips", name: "Milestone trips", detail: "Big birthdays, graduations & reunions", image: moodFormalImage },
+  { to: "/first-big-trip", name: "Your first big trip", detail: "Overwhelmed by options? Start here", image: jetsetHeroImage },
 ] as const;
 
 const destinations = [
