@@ -21,29 +21,29 @@ function CouplesGetaways() {
     <OccasionPage
       eyebrow="Couples & getaways"
       title={<>Trips for two, planned around <em className="font-normal">the two of you.</em></>}
-      intro="Anniversaries, proposals, honeymoons, or simply a week away from everything. I plan romantic trips personally — the right room, the right view, and the details that make it feel like yours."
+      intro="Anniversaries, proposals, honeymoons, or simply a week away from everything. I plan romantic trips personally, down to the right room, the right view, and the details that make it feel like yours."
       image={amalfiImage}
-      imageAlt="Amalfi Coast, Italy — a romantic couples getaway destination"
+      imageAlt="Amalfi Coast, Italy, a romantic couples getaway destination"
       sections={[
         {
           title: "Anniversary trips worth the occasion",
-          copy: "Whether it's year one or year twenty-five, I match you with the right destination and the right room — then layer in the perks, like upgrades, breakfast, and resort credit where they're available.",
+          copy: "Whether it's year one or year twenty-five, I match you with the right destination and the right room. Then I layer in the perks, like upgrades, breakfast, and resort credit where they're available.",
         },
         {
           title: "Proposals, planned quietly",
-          copy: "Tell me the moment you're picturing and I'll handle the logistics around it — the hotel that helps instead of hovers, the timing, the table, the view. You just have to ask the question.",
+          copy: "Tell me the moment you're picturing and I'll handle the logistics around it, including the hotel that helps instead of hovers, the timing, the table, the view. You just have to ask the question.",
         },
         {
           title: "Honeymoons without the spreadsheet",
-          copy: "You've planned a wedding. You shouldn't have to plan this too. I stayed at the Sheraton in Maui myself and recommend it for honeymoons — relaxing, with service that truly stood out. Wherever you go, I build it around how you want to feel.",
+          copy: "You've planned a wedding. You shouldn't have to plan this too. I stayed at the Sheraton in Maui myself and recommend it for honeymoons. It was relaxing, with service that truly stood out. Wherever you go, I build it around how you want to feel.",
         },
         {
           title: "The 'we just need a week away' trip",
-          copy: "No occasion needed. Give me your dates and a rough budget and I'll come back with considered options — beach, city, or mountains — with perks you'd never unlock booking alone.",
+          copy: "No occasion needed. Give me your dates and a rough budget and I'll come back with considered options, whether beach, city, or mountains, with perks you'd never unlock booking alone.",
         },
       ]}
       closingTitle="Tell me what you're celebrating."
-      closingCopy="A short call is all it takes. I'll listen, then come back with real options — hotels I've vetted, routes that make sense, and perks included. Planning and booking are totally free, start to finish."
+      closingCopy="A short call is all it takes. I'll listen, then come back with real options: hotels I've vetted, routes that make sense, and perks included. Planning and booking are totally free, start to finish."
       ctaLabel="Plan our getaway"
     />
   );

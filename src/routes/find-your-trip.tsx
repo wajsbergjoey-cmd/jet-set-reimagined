@@ -17,9 +17,9 @@ import formalImage from "@/assets/mood-formal.jpg";
 export const Route = createFileRoute("/find-your-trip")({
   head: () => ({
     meta: [
-      { title: "Build Your Dream Trip Mood Board — Jet Set Travel Co." },
-      { name: "description", content: "Tap the photos that feel like you and build a dream-trip mood board in seconds — then send it to Joey for a free consultation." },
-      { property: "og:title", content: "Build Your Dream Trip Mood Board — Jet Set Travel Co." },
+      { title: "Build Your Dream Trip Mood Board | Jet Set Travel Co." },
+      { name: "description", content: "Tap the photos that feel like you and build a dream-trip mood board in seconds, then send it to Joey for a free consultation." },
+      { property: "og:title", content: "Build Your Dream Trip Mood Board | Jet Set Travel Co." },
       { property: "og:description", content: "Tap the photos that feel like you and build a dream-trip mood board in seconds." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,7 +38,7 @@ const steps: Step[] = [
     { id: "Mountains", label: "Mountains & lodges", image: mountainImage },
   ] },
   { key: "who", title: "Company", question: "Who's coming along?", options: [
-    { id: "Couples / adults-only", label: "Just us — adults-only", image: formalImage },
+    { id: "Couples / adults-only", label: "Just us, adults only", image: formalImage },
     { id: "Family", label: "The whole family", image: familyImage },
     { id: "Friends / group", label: "Friends & a crew", image: cancunImage },
   ] },
@@ -60,11 +60,11 @@ const steps: Step[] = [
 
 function suggestion(p: Record<string, Option[]>) {
   const has = (k: string, id: string) => p[k]?.some((o) => o.id === id);
-  if (has("vibe", "City")) return "Old-world cities and long lunches — think Amalfi, Paris or Lisbon.";
-  if (has("vibe", "Mountains")) return "Fireside lodges and big views — Alps, Banff or Aspen territory.";
-  if (has("who", "Family")) return "Beachfront with room to roam — Maui or Cancun fit beautifully.";
-  if (has("who", "Couples / adults-only")) return "Barefoot, adults-only and beach-first — sounds like Turks & Caicos.";
-  return "Sun, sand and a great hotel — Caribbean or Hawaii are calling.";
+  if (has("vibe", "City")) return "Old-world cities and long lunches. Think Amalfi, Paris or Lisbon.";
+  if (has("vibe", "Mountains")) return "Fireside lodges and big views. Think Alps, Banff or Aspen territory.";
+  if (has("who", "Family")) return "Beachfront with room to roam. Maui or Cancun fit beautifully.";
+  if (has("who", "Couples / adults-only")) return "Barefoot, adults-only and beach-first. Sounds like Turks & Caicos.";
+  return "Sun, sand and a great hotel. Caribbean or Hawaii are calling.";
 }
 
 function MoodBoard() {
@@ -137,7 +137,7 @@ function MoodBoard() {
                 {steps.map((s, i) => <span key={s.key} className={`h-1 flex-1 rounded-full ${i <= stepIndex ? "bg-accent" : "bg-border"}`} />)}
               </div>
               <h1 className="mt-6 text-4xl sm:text-5xl">{step.question}</h1>
-              <p className="mt-3 text-sm text-muted-foreground">Tap everything that feels like you — pick as many as you like.</p>
+              <p className="mt-3 text-sm text-muted-foreground">Tap everything that feels like you. Pick as many as you like.</p>
               <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
                 {step.options.map((o) => {
                   const on = (picks[step.key] ?? []).some((x) => x.id === o.id);
@@ -166,7 +166,7 @@ function MoodBoard() {
               <div className="mt-8 border border-primary/20 bg-card p-6 sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Totally free, start to finish</p>
                 <h2 className="mt-3 text-2xl">Send your board to Joey</h2>
-                <p className="mt-2 text-sm text-muted-foreground">Joey sees your picks before you ever talk — so your call jumps straight to the good part.</p>
+                <p className="mt-2 text-sm text-muted-foreground">Joey sees your picks before you ever talk, so your call jumps straight to the good part.</p>
                 <div className="mt-5 grid gap-3 sm:grid-cols-2">
                   <div>
                     <label className="block text-sm font-medium" htmlFor="mb-first">First name</label>

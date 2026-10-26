@@ -86,19 +86,19 @@ export function OccasionPage({
             <p className="mt-5 max-w-xl text-base leading-7 text-foreground/70">{closingCopy}</p>
             <p className="mt-5 inline-flex items-center gap-2 rounded-sm border border-accent/60 bg-accent/15 px-4 py-2.5 text-sm font-semibold tracking-wide">
               <span className="size-1.5 shrink-0 rounded-full bg-accent" />
-              Totally free — from the first call until you're back home, you never pay me a thing.
+              Totally free. From the first call until you're back home, you never pay me a thing.
             </p>
           </div>
           <div className="border border-primary/20 bg-background p-7 sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">A real reply within 24 hours</p>
             <h3 className="mt-4 text-3xl">Tell me about your trip.</h3>
             <p className="mt-4 text-sm leading-6 text-muted-foreground">
-              Book a free call and we'll talk through dates, budget, and what you want the trip to feel like. No forms disappearing into a queue — you hear back from me personally, usually within a day.
+              Book a free call and we'll talk through dates, budget, and what you want the trip to feel like. No forms disappearing into a queue. You hear back from me personally, usually within a day.
             </p>
             <Button size="lg" className="mt-7 h-13 w-full rounded-sm" onClick={() => setConsultOpen(true)}>
               {ctaLabel} <ArrowRight />
             </Button>
-            <p className="mt-4 text-center text-[11px] text-muted-foreground">Private, personal, and no spam — ever.</p>
+            <p className="mt-4 text-center text-[11px] text-muted-foreground">Private, personal, and no spam, ever.</p>
           </div>
         </div>
       </section>
