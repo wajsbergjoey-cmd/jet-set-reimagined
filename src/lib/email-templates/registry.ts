@@ -1,4 +1,5 @@
 import { template as moodBoard } from './mood-board-request'
+import { template as tripCheck } from './trip-check-request'
 import type { ComponentType } from 'react'
 
 export interface TemplateEntry {
@@ -20,6 +21,7 @@ export interface TemplateEntry {
  */
 export const TEMPLATES: Record<string, TemplateEntry> = {
   'mood-board-request': moodBoard,
+  'trip-check-request': tripCheck,
   // Add templates here as they are created, e.g.:
   // 'welcome': welcomeTemplate,
 }
