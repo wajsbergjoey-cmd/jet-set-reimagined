@@ -3,7 +3,8 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowRight, BedDouble, Menu, Plane, Sailboat, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { HeroSlideshow } from "@/components/hero-slideshow";
+import { HeroSlideshow, HERO_PHOTOS } from "@/components/hero-slideshow";
+import { PhotoLightbox, type LightboxPhoto } from "@/components/photo-lightbox";
 import mauiImage from "@/assets/maui.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 import cancunImage from "@/assets/cancun.jpg";
@@ -37,6 +38,13 @@ const destinations = [
   { name: "Turks & Caicos", detail: "Caribbean", image: turksImage },
 ];
 
+const tripPhotos: LightboxPhoto[] = destinations.map((destination) => ({
+  src: destination.image,
+  alt: `${destination.name} luxury travel destination`,
+  name: destination.name,
+  region: destination.detail,
+}));
+
 const services = [
   { Icon: BedDouble, title: "Hotels & resorts", copy: "Room upgrades, resort credit, and early check-in at vetted luxury properties." },
   { Icon: Sailboat, title: "Cruises", copy: "Cabin selection, onboard credits, and verified itinerary advice." },
@@ -53,6 +61,7 @@ const reviews = [
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [consultOpen, setConsultOpen] = useState(false);
+  const [lightbox, setLightbox] = useState<{ photos: LightboxPhoto[]; index: number } | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -108,7 +117,7 @@ function Index() {
       </header>
 
       <section id="top" className="relative min-h-[760px] pt-[76px] text-primary-foreground lg:min-h-[800px]">
-        <HeroSlideshow />
+        <HeroSlideshow onOpen={(i) => setLightbox({ photos: HERO_PHOTOS, index: i })} />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:flex-row lg:items-end lg:justify-between lg:gap-14 lg:px-10 lg:pb-12">
           <div className="w-full max-w-3xl">
