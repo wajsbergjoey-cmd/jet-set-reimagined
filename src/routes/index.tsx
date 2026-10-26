@@ -9,6 +9,8 @@ import mauiImage from "@/assets/maui.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 import cancunImage from "@/assets/cancun.jpg";
 import turksImage from "@/assets/turks-caicos.jpg";
+import moodFormalImage from "@/assets/mood-formal.jpg";
+import jetsetHeroImage from "@/assets/jetset-hero.jpg";
 import { DepartureBoard } from "@/components/departure-board";
 import { TripCheckForm } from "@/components/trip-check-form";
 
@@ -27,8 +29,14 @@ export const Route = createFileRoute("/")({
 });
 
 const navItems = [
-  ["Services", "#services"], ["Perks", "#perks"], ["Recent trips", "#trips"],
+  ["Services", "#services"], ["Perks", "#perks"], ["Occasions", "#occasions"], ["Recent trips", "#trips"],
   ["Trip check", "#trip-check"], ["Reviews", "#reviews"], ["Contact", "#contact"],
+] as const;
+
+const occasions = [
+  { to: "/couples-getaways", name: "Couples & getaways", detail: "Anniversaries, proposals & honeymoons", image: amalfiImage },
+  { to: "/milestone-trips", name: "Milestone trips", detail: "Big birthdays, graduations & reunions", image: moodFormalImage },
+  { to: "/first-big-trip", name: "Your first big trip", detail: "Overwhelmed by options? Start here", image: jetsetHeroImage },
 ] as const;
 
 const destinations = [
@@ -161,13 +169,39 @@ function Index() {
         </div>
       </section>
 
+      <section id="occasions" className="scroll-mt-20 border-t border-border bg-card px-5 py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-accent">Trips by occasion</p>
+              <h2 className="mt-3 text-4xl sm:text-5xl">Whatever you're planning, there's a page for it.</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-muted-foreground">Three of the trips I plan most, each with its own ideas and starting points.</p>
+          </div>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {occasions.map((occasion) => (
+              <Link key={occasion.to} to={occasion.to} className="group relative block overflow-hidden focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-accent">
+                <img src={occasion.image} alt={`${occasion.name} travel inspiration`} loading="lazy" width={1200} height={912} className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/25 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
+                  <div className="font-serif text-2xl">{occasion.name}</div>
+                  <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-primary-foreground/75">{occasion.detail}</div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
+                    Explore <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section id="trips" className="scroll-mt-20 bg-primary px-5 py-24 text-primary-foreground lg:px-10 lg:py-28">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="text-xs uppercase tracking-[0.2em] text-secondary">Recent trips</p><h2 className="mt-3 text-4xl sm:text-5xl">A few places clients have landed.</h2></div><p className="max-w-sm text-sm leading-6 text-primary-foreground/60">Vetted stays, thoughtful routes, and the right details waiting at check-in.</p></div>
           <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">{destinations.map((destination, index) => <figure key={destination.name} className={`group relative overflow-hidden ${index % 2 ? 'lg:mt-12' : ''}`}><button type="button" aria-label={`Look closer at ${destination.name}`} onClick={() => setLightbox({ photos: tripPhotos, index })} className="block w-full cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-secondary"><img src={destination.image} alt={`${destination.name} luxury travel destination`} loading="lazy" width={1200} height={912} className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105" /></button><div className="pointer-events-none absolute inset-0 bg-primary/25" /><figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-6"><div className="font-serif text-2xl">{destination.name}</div><div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-primary-foreground/75">{destination.detail}</div></figcaption></figure>)}</div>
           <div className="mt-4 grid gap-8 border-t border-primary-foreground/15 pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-secondary">Maui, first-hand</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-secondary">Trip story No. 1 · Maui, first-hand</p>
               <h3 className="mt-3 max-w-md text-3xl leading-[1.08] sm:text-4xl">Planning a Maui trip? I know the island.</h3>
             </div>
             <div>
@@ -184,6 +218,7 @@ function Index() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Already booked? Get a second look</p>
             <h2 className="mt-3 text-4xl leading-[1.05] sm:text-5xl">Send me your trip. I'll tell you what to fix.</h2>
             <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">Booked on your own and want a second opinion? Send me the details. I'll look at the timing, the hotel situation, and the things that quietly cause trouble, then reply with what to confirm or change before you go.</p>
+            <p className="mt-5 inline-flex items-center gap-2 rounded-sm border border-accent/60 bg-accent/15 px-4 py-2.5 text-sm font-semibold tracking-wide"><span className="size-1.5 shrink-0 rounded-full bg-accent" />A real reply from me, personally, within 24 hours.</p>
             <ol className="mt-9 space-y-4 text-sm text-muted-foreground">
               <li className="flex gap-3"><span className="font-semibold text-accent">01</span>You send the trip you have in mind.</li>
               <li className="flex gap-3"><span className="font-semibold text-accent">02</span>I read it and note what looks risky.</li>
@@ -204,9 +239,9 @@ function Index() {
         <AccordionItem value="transport"><AccordionTrigger className="py-6 text-base no-underline hover:no-underline">Can you coordinate flights and cruises too?</AccordionTrigger><AccordionContent className="max-w-2xl pb-6 leading-6 text-muted-foreground">Yes. I can coordinate air, hotels, transfers, and cruises into one seamless trip, including cabin and seat guidance and support if plans shift.</AccordionContent></AccordionItem>
       </Accordion></div></section>
 
-      <section id="contact" className="scroll-mt-20 bg-secondary px-5 py-24 lg:px-10 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center"><div><p className="text-xs uppercase tracking-[0.2em]">Let’s plan something</p><h2 className="mt-4 max-w-2xl text-5xl leading-[1.05] sm:text-6xl">A quick call tells us if we’re a fit.</h2><p className="mt-6 max-w-xl text-base leading-7 text-foreground/70">Everything is free — not just the first call. The planning and the booking are included too, so you never pay me anything from start to finish.</p></div><div className="border border-primary/20 bg-background p-7 sm:p-10"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Free, start to finish</p><h3 className="mt-4 text-3xl">Your next trip starts here.</h3><ol className="mt-7 space-y-4 text-sm text-muted-foreground"><li className="flex gap-3"><span className="font-semibold text-accent">01</span>We talk through your trip, budget, and dates.</li><li className="flex gap-3"><span className="font-semibold text-accent">02</span>I send a proposal with real, considered options.</li><li className="flex gap-3"><span className="font-semibold text-accent">03</span>You approve, and I take care of the booking — free of charge.</li></ol><Button size="lg" className="mt-8 h-13 w-full rounded-sm" onClick={() => setConsultOpen(true)}>Book your consult <ArrowRight /></Button><p className="mt-4 text-center text-[11px] text-muted-foreground">Private, personal, and no spam — ever.</p></div></div></section>
+      <section id="contact" className="scroll-mt-20 bg-secondary px-5 py-24 lg:px-10 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center"><div><p className="text-xs uppercase tracking-[0.2em]">Let’s plan something</p><h2 className="mt-4 max-w-2xl text-5xl leading-[1.05] sm:text-6xl">A quick call tells us if we’re a fit.</h2><p className="mt-6 max-w-xl text-base leading-7 text-foreground/70">Everything is free — not just the first call. The planning and the booking are included too, so you never pay me anything from start to finish.</p><p className="mt-5 max-w-xl text-sm font-semibold text-foreground/85">And you won't wait on me — I reply to every message personally, usually within 24 hours.</p></div><div className="border border-primary/20 bg-background p-7 sm:p-10"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">Free, start to finish</p><h3 className="mt-4 text-3xl">Your next trip starts here.</h3><ol className="mt-7 space-y-4 text-sm text-muted-foreground"><li className="flex gap-3"><span className="font-semibold text-accent">01</span>We talk through your trip, budget, and dates.</li><li className="flex gap-3"><span className="font-semibold text-accent">02</span>I send a proposal with real, considered options.</li><li className="flex gap-3"><span className="font-semibold text-accent">03</span>You approve, and I take care of the booking — free of charge.</li></ol><Button size="lg" className="mt-8 h-13 w-full rounded-sm" onClick={() => setConsultOpen(true)}>Book your consult <ArrowRight /></Button><p className="mt-4 text-center text-[11px] text-muted-foreground">Private, personal, and no spam — ever.</p></div></div></section>
 
-      <footer className="bg-primary px-5 py-14 text-primary-foreground lg:px-10"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-10 sm:flex-row"><div><div className="font-serif text-2xl uppercase tracking-[0.16em]">Jet Set<span className="block font-sans text-[9px] tracking-[0.34em] text-secondary">Travel Co.</span></div><p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/60">Hotels, cruises & flights, planned with an insider’s eye.</p><p className="mt-3 text-xs text-primary-foreground/55">Independent travel advisor of Fora Travel</p></div><div className="flex flex-col gap-3 text-sm"><a href="mailto:jetsettravelco1@gmail.com" className="hover:text-secondary">jetsettravelco1@gmail.com</a><a href="https://www.instagram.com/jetsettravelco_/" target="_blank" rel="noreferrer" className="hover:text-secondary">Instagram @jetsettravelco_</a></div></div></div></footer>
+      <footer className="bg-primary px-5 py-14 text-primary-foreground lg:px-10"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-10 sm:flex-row"><div><div className="font-serif text-2xl uppercase tracking-[0.16em]">Jet Set<span className="block font-sans text-[9px] tracking-[0.34em] text-secondary">Travel Co.</span></div><p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/60">Hotels, cruises & flights, planned with an insider’s eye.</p><p className="mt-3 text-xs text-primary-foreground/55">Independent travel advisor of Fora Travel</p></div><div className="flex flex-col gap-3 text-sm"><p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary">Trips by occasion</p><Link to="/couples-getaways" className="hover:text-secondary">Couples & getaways</Link><Link to="/milestone-trips" className="hover:text-secondary">Milestone trips</Link><Link to="/first-big-trip" className="hover:text-secondary">Your first big trip</Link></div><div className="flex flex-col gap-3 text-sm"><a href="mailto:jetsettravelco1@gmail.com" className="hover:text-secondary">jetsettravelco1@gmail.com</a><a href="https://www.instagram.com/jetsettravelco_/" target="_blank" rel="noreferrer" className="hover:text-secondary">Instagram @jetsettravelco_</a></div></div></div></footer>
       <PhotoLightbox
         photos={lightbox?.photos ?? HERO_PHOTOS}
         index={lightbox?.index ?? null}

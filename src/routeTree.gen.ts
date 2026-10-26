@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CouplesGetawaysRouteImport } from './routes/couples-getaways'
 import { Route as FindYourTripRouteImport } from './routes/find-your-trip'
+import { Route as FirstBigTripRouteImport } from './routes/first-big-trip'
+import { Route as MilestoneTripsRouteImport } from './routes/milestone-trips'
 import { Route as VacationSimulatorRouteImport } from './routes/vacation-simulator'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
@@ -19,9 +22,24 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CouplesGetawaysRoute = CouplesGetawaysRouteImport.update({
+  id: '/couples-getaways',
+  path: '/couples-getaways',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FindYourTripRoute = FindYourTripRouteImport.update({
   id: '/find-your-trip',
   path: '/find-your-trip',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstBigTripRoute = FirstBigTripRouteImport.update({
+  id: '/first-big-trip',
+  path: '/first-big-trip',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MilestoneTripsRoute = MilestoneTripsRouteImport.update({
+  id: '/milestone-trips',
+  path: '/milestone-trips',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VacationSimulatorRoute = VacationSimulatorRouteImport.update({
@@ -38,20 +56,29 @@ const LovableEmailTransactionalPreviewRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/couples-getaways': typeof CouplesGetawaysRoute
   '/find-your-trip': typeof FindYourTripRoute
+  '/first-big-trip': typeof FirstBigTripRoute
+  '/milestone-trips': typeof MilestoneTripsRoute
   '/vacation-simulator': typeof VacationSimulatorRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/couples-getaways': typeof CouplesGetawaysRoute
   '/find-your-trip': typeof FindYourTripRoute
+  '/first-big-trip': typeof FirstBigTripRoute
+  '/milestone-trips': typeof MilestoneTripsRoute
   '/vacation-simulator': typeof VacationSimulatorRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/couples-getaways': typeof CouplesGetawaysRoute
   '/find-your-trip': typeof FindYourTripRoute
+  '/first-big-trip': typeof FirstBigTripRoute
+  '/milestone-trips': typeof MilestoneTripsRoute
   '/vacation-simulator': typeof VacationSimulatorRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
@@ -59,26 +86,38 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/couples-getaways'
     | '/find-your-trip'
+    | '/first-big-trip'
+    | '/milestone-trips'
     | '/vacation-simulator'
     | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/couples-getaways'
     | '/find-your-trip'
+    | '/first-big-trip'
+    | '/milestone-trips'
     | '/vacation-simulator'
     | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
+    | '/couples-getaways'
     | '/find-your-trip'
+    | '/first-big-trip'
+    | '/milestone-trips'
     | '/vacation-simulator'
     | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CouplesGetawaysRoute: typeof CouplesGetawaysRoute
   FindYourTripRoute: typeof FindYourTripRoute
+  FirstBigTripRoute: typeof FirstBigTripRoute
+  MilestoneTripsRoute: typeof MilestoneTripsRoute
   VacationSimulatorRoute: typeof VacationSimulatorRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
@@ -92,11 +131,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/couples-getaways': {
+      id: '/couples-getaways'
+      path: '/couples-getaways'
+      fullPath: '/couples-getaways'
+      preLoaderRoute: typeof CouplesGetawaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/find-your-trip': {
       id: '/find-your-trip'
       path: '/find-your-trip'
       fullPath: '/find-your-trip'
       preLoaderRoute: typeof FindYourTripRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-big-trip': {
+      id: '/first-big-trip'
+      path: '/first-big-trip'
+      fullPath: '/first-big-trip'
+      preLoaderRoute: typeof FirstBigTripRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/milestone-trips': {
+      id: '/milestone-trips'
+      path: '/milestone-trips'
+      fullPath: '/milestone-trips'
+      preLoaderRoute: typeof MilestoneTripsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/vacation-simulator': {
@@ -118,7 +178,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CouplesGetawaysRoute: CouplesGetawaysRoute,
   FindYourTripRoute: FindYourTripRoute,
+  FirstBigTripRoute: FirstBigTripRoute,
+  MilestoneTripsRoute: MilestoneTripsRoute,
   VacationSimulatorRoute: VacationSimulatorRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
