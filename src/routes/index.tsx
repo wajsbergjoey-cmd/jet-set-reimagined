@@ -169,6 +169,32 @@ function Index() {
         </div>
       </section>
 
+      <section id="occasions" className="scroll-mt-20 border-t border-border bg-card px-5 py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-accent">Trips by occasion</p>
+              <h2 className="mt-3 text-4xl sm:text-5xl">Whatever you're planning, there's a page for it.</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-muted-foreground">Three of the trips I plan most, each with its own ideas and starting points.</p>
+          </div>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {occasions.map((occasion) => (
+              <Link key={occasion.to} to={occasion.to} className="group relative block overflow-hidden focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-accent">
+                <img src={occasion.image} alt={`${occasion.name} travel inspiration`} loading="lazy" width={1200} height={912} className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/25 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
+                  <div className="font-serif text-2xl">{occasion.name}</div>
+                  <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-primary-foreground/75">{occasion.detail}</div>
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
+                    Explore <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section id="trips" className="scroll-mt-20 bg-primary px-5 py-24 text-primary-foreground lg:px-10 lg:py-28">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="text-xs uppercase tracking-[0.2em] text-secondary">Recent trips</p><h2 className="mt-3 text-4xl sm:text-5xl">A few places clients have landed.</h2></div><p className="max-w-sm text-sm leading-6 text-primary-foreground/60">Vetted stays, thoughtful routes, and the right details waiting at check-in.</p></div>
