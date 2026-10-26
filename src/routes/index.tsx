@@ -201,7 +201,7 @@ function Index() {
           <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">{destinations.map((destination, index) => <figure key={destination.name} className={`group relative overflow-hidden ${index % 2 ? 'lg:mt-12' : ''}`}><button type="button" aria-label={`Look closer at ${destination.name}`} onClick={() => setLightbox({ photos: tripPhotos, index })} className="block w-full cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-secondary"><img src={destination.image} alt={`${destination.name} luxury travel destination`} loading="lazy" width={1200} height={912} className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105" /></button><div className="pointer-events-none absolute inset-0 bg-primary/25" /><figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-6"><div className="font-serif text-2xl">{destination.name}</div><div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-primary-foreground/75">{destination.detail}</div></figcaption></figure>)}</div>
           <div className="mt-4 grid gap-8 border-t border-primary-foreground/15 pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-secondary">Maui, first-hand</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-secondary">Trip story No. 1 · Maui, first-hand</p>
               <h3 className="mt-3 max-w-md text-3xl leading-[1.08] sm:text-4xl">Planning a Maui trip? I know the island.</h3>
             </div>
             <div>
@@ -218,6 +218,7 @@ function Index() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Already booked? Get a second look</p>
             <h2 className="mt-3 text-4xl leading-[1.05] sm:text-5xl">Send me your trip. I'll tell you what to fix.</h2>
             <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">Booked on your own and want a second opinion? Send me the details. I'll look at the timing, the hotel situation, and the things that quietly cause trouble, then reply with what to confirm or change before you go.</p>
+            <p className="mt-5 inline-flex items-center gap-2 rounded-sm border border-accent/60 bg-accent/15 px-4 py-2.5 text-sm font-semibold tracking-wide"><span className="size-1.5 shrink-0 rounded-full bg-accent" />A real reply from me, personally, within 24 hours.</p>
             <ol className="mt-9 space-y-4 text-sm text-muted-foreground">
               <li className="flex gap-3"><span className="font-semibold text-accent">01</span>You send the trip you have in mind.</li>
               <li className="flex gap-3"><span className="font-semibold text-accent">02</span>I read it and note what looks risky.</li>
