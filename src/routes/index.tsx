@@ -118,7 +118,7 @@ function Index() {
 
       <section id="top" className="relative min-h-[760px] pt-[76px] text-primary-foreground lg:min-h-[800px]">
         <HeroSlideshow onOpen={(i) => setLightbox({ photos: HERO_PHOTOS, index: i })} />
-        <div className="absolute inset-0 bg-primary/55" />
+        <div className="pointer-events-none absolute inset-0 bg-primary/55" />
         <div className="relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:flex-row lg:items-end lg:justify-between lg:gap-14 lg:px-10 lg:pb-12">
           <div className="w-full max-w-3xl">
             <p className="inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-primary-foreground/35 bg-primary/25 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] whitespace-nowrap"><span className="size-1.5 shrink-0 rounded-full bg-secondary" /><span className="hidden sm:inline">Travel advisor — hotels, cruises &amp; flights</span><span className="sm:hidden">Travel advisor</span></p>
