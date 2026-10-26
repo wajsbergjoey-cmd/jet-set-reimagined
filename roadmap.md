@@ -16,3 +16,4 @@
 - [x] Vacation Simulator sample (draft only, in-memory, no accounts)
 - [ ] Simulator accounts and saved trips (paused by Joey 2026-10-22; Cloud is already on, so this waits on him restarting the simulator)
 - [x] Free Trip Sanity Check section on the homepage: form stores each request and emails Joey (built and verified 2026-10-26; needs a publish to reach jet-settravelco.com)
+- [x] Standout additions: three occasion pages (/couples-getaways, /milestone-trips, /first-big-trip), 24-hour personal reply promise, Maui panel labeled Trip story No. 1, homepage Occasions section, footer links, sitemap updated (built and verified 2026-10-26; needs a publish to go live)
