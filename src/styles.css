@@ -279,9 +279,19 @@
   to { transform: rotateX(86deg); opacity: 0; }
 }
 
+.hero-drift {
+  animation: hero-drift 7.5s ease-out forwards;
+}
+
+@keyframes hero-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.07); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .flap-cover { animation: none; opacity: 0; }
   .board-dot { animation: none; }
+  .hero-drift { animation: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
