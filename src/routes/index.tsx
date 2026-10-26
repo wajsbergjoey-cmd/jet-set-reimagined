@@ -9,6 +9,7 @@ import amalfiImage from "@/assets/amalfi.jpg";
 import cancunImage from "@/assets/cancun.jpg";
 import turksImage from "@/assets/turks-caicos.jpg";
 import { DepartureBoard } from "@/components/departure-board";
+import { TripCheckForm } from "@/components/trip-check-form";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,7 +27,7 @@ export const Route = createFileRoute("/")({
 
 const navItems = [
   ["Services", "#services"], ["Perks", "#perks"], ["Recent trips", "#trips"],
-  ["Reviews", "#reviews"], ["Contact", "#contact"],
+  ["Trip check", "#trip-check"], ["Reviews", "#reviews"], ["Contact", "#contact"],
 ] as const;
 
 const destinations = [
