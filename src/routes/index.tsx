@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowRight, BedDouble, Menu, Plane, Sailboat, Send, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import heroImage from "@/assets/jetset-hero.jpg";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 import mauiImage from "@/assets/maui.jpg";
 import amalfiImage from "@/assets/amalfi.jpg";
 import cancunImage from "@/assets/cancun.jpg";
@@ -108,7 +108,7 @@ function Index() {
       </header>
 
       <section id="top" className="relative min-h-[760px] pt-[76px] text-primary-foreground lg:min-h-[800px]">
-        <img src={heroImage} alt="Cliffside infinity pool overlooking a Greek island at sunset" width={1600} height={1200} className="absolute inset-0 size-full object-cover" />
+        <HeroSlideshow />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:flex-row lg:items-end lg:justify-between lg:gap-14 lg:px-10 lg:pb-12">
           <div className="w-full max-w-3xl">
