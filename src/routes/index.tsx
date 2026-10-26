@@ -169,6 +169,23 @@ function Index() {
         </div>
       </section>
 
+      <section id="trip-check" className="scroll-mt-20 border-y border-border bg-card px-5 py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-20">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-accent">Already booked? Get a second look</p>
+            <h2 className="mt-3 text-4xl leading-[1.05] sm:text-5xl">Send me your trip. I'll tell you what to fix.</h2>
+            <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">Booked on your own and want a second opinion? Send me the details. I'll look at the timing, the hotel situation, and the things that quietly cause trouble, then reply with what to confirm or change before you go.</p>
+            <ol className="mt-9 space-y-4 text-sm text-muted-foreground">
+              <li className="flex gap-3"><span className="font-semibold text-accent">01</span>You send the trip you have in mind.</li>
+              <li className="flex gap-3"><span className="font-semibold text-accent">02</span>I read it and note what looks risky.</li>
+              <li className="flex gap-3"><span className="font-semibold text-accent">03</span>You get an email with what to fix.</li>
+            </ol>
+          </div>
+          <TripCheckForm />
+        </div>
+      </section>
+
+
       <section id="reviews" className="scroll-mt-20 px-5 py-24 lg:px-10 lg:py-32"><div className="mx-auto max-w-7xl"><p className="text-xs uppercase tracking-[0.2em] text-accent">Client reviews</p><h2 className="mt-3 text-4xl sm:text-5xl">What it’s like to work with Joey.</h2><div className="mt-14 grid gap-px bg-border md:grid-cols-2">{reviews.map(([name, quote]) => <article key={name} className="bg-background p-7 sm:p-10"><div className="text-sm tracking-[0.2em] text-accent" aria-label="Five stars">★★★★★</div><blockquote className="mt-6 text-xl leading-8">“{quote}”</blockquote><p className="mt-7 text-xs font-semibold uppercase tracking-[0.16em]">{name}</p></article>)}</div></div></section>
 
       <section className="border-y border-border bg-card px-5 py-24 lg:px-10"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24"><div><p className="text-xs uppercase tracking-[0.2em] text-accent">Good to know</p><h2 className="mt-3 text-4xl sm:text-5xl">Frequently asked questions</h2></div><Accordion type="single" collapsible className="w-full">
