@@ -39,7 +39,7 @@ export function TripCheckForm() {
       <p className="mt-3 text-sm leading-6 text-muted-foreground">Where you're going, the dates, where you're staying, and anything you're unsure about.</p>
 
       {status === "sent" ? (
-        <p role="status" className="mt-7 border-t border-border pt-6 text-sm leading-6 text-accent">
+        <p role="status" className="mt-7 border-t border-border pt-6 text-sm leading-6 text-foreground">
           Thank you, {name}! Your trip is with Joey. He'll read it over and reply with what to fix.
         </p>
       ) : (
