@@ -119,11 +119,11 @@ function Index() {
       <section id="top" className="relative min-h-[760px] pt-[76px] text-primary-foreground lg:min-h-[800px]">
         <HeroSlideshow onOpen={(i) => setLightbox({ photos: HERO_PHOTOS, index: i })} />
         <div className="pointer-events-none absolute inset-0 bg-primary/55" />
-        <div className="relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:flex-row lg:items-end lg:justify-between lg:gap-14 lg:px-10 lg:pb-12">
+        <div className="pointer-events-none relative mx-auto flex min-h-[684px] max-w-7xl flex-col justify-end px-5 pb-10 lg:min-h-[724px] lg:flex-row lg:items-end lg:justify-between lg:gap-14 lg:px-10 lg:pb-12">
           <div className="w-full max-w-3xl">
             <p className="inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-primary-foreground/35 bg-primary/25 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] whitespace-nowrap"><span className="size-1.5 shrink-0 rounded-full bg-secondary" /><span className="hidden sm:inline">Travel advisor — hotels, cruises &amp; flights</span><span className="sm:hidden">Travel advisor</span></p>
             <h1 className="mt-6 max-w-3xl text-5xl leading-[0.98] font-medium sm:text-6xl lg:text-7xl">Trips planned with taste, <em className="font-normal">booked with an edge.</em></h1>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="pointer-events-auto mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-13 rounded-sm bg-background px-7 text-foreground shadow-none hover:bg-background/90"><a href="#contact">Get your free consultation</a></Button>
               <Button asChild size="lg" variant="outline" className="h-13 rounded-sm border-primary-foreground/55 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><Link to="/find-your-trip">Build your dream trip</Link></Button>
             </div>
